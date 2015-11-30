@@ -41,7 +41,7 @@
                         );
                         
                         // oauth_token が返ってきてたら
-                        if (oauth_token.length) {
+                        if (oauth_token && oauth_token.length) {
                             // singlepage では opener.authComplete が使えないので、 auth.bootstrapToken を使う
                             auth.bootstrapToken (oauth_token, function(){});
                         }
