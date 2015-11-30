@@ -23,7 +23,9 @@
                 location.href = '/?oauth_token=' + oauth_token;
             }
             else {
-                location.href = location.protocol + '//' + location.host + location.pathname + '/?oauth_token=' + oauth_token;
+                var path = location.pathname.split('/');
+                path.pop();
+                location.href = location.protocol + '//' + location.host + path.join('/') + '/?oauth_token=' + oauth_token;
             }
     </script>
 </body>
