@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <head>
-    </head>
-    <body>
-        <script>
-            function stringQs(str) {
+
+<head>
+</head>
+
+<body>
+    <script>
+        function stringQs(str) {
                 return str.split('&').filter(function (pair) {
                     return pair !== '';
                 }).reduce(function(obj, pair){
@@ -16,7 +18,14 @@
             }
             
             var oauth_token = stringQs(window.location.href.split('?')[1]).oauth_token;
-            location.href = '/?oauth_token=' + oauth_token;
-        </script>
-    </body>
+            
+            if(location.pathname.split('/').length === 2){
+                location.href = '/?oauth_token=' + oauth_token;
+            }
+            else {
+                location.href = location.protocol + '//' + location.host + location.pathname + '/?oauth_token=' + oauth_token;
+            }
+    </script>
+</body>
+
 </html>
