@@ -7,9 +7,12 @@
 		<script src="./osmauth.min.js"></script>
 	</head>
 	<body>
-		<input id="get-user-data" type="button" value="OAuth テスト（ユーザデータ取得）">
+		<button id="singlepage-oauth">シングルページバージョン</button>
+		<button id="popup-oauth">ポップアップバージョン</button>
+		<hr />
+		<input disabled id="get-user-data" type="button" value="OAuth テスト（ユーザデータ取得）">
 		<div id="result"></div>
-		<input id="logout" type="button" value="OpenStreetMap からログアウト">
+		<input disabled id="logout" type="button" value="OpenStreetMap からログアウト">
 		<script src="./main.js"></script>
 	</body>
 </html>
